@@ -1,0 +1,2 @@
+# Stonecutter template
+

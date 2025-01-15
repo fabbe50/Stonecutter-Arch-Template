@@ -1,5 +1,5 @@
 //? if neoforge {
-package com.example.template.platforms.neoforge;
+/*package com.example.template.platforms.neoforge;
 
 import com.example.template.ConfigScreen;
 import com.example.template.TempLateInit;
@@ -11,8 +11,8 @@ import net.neoforged.fml.common.Mod;
 //? if <1.21 {
 import net.neoforged.neoforge.client.ConfigScreenHandler;
 //?} else {
-/*import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-*///?}
+/^import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+^///?}
 @Mod("template")
 public class TempLateNeoForge {
 	public TempLateNeoForge() {
@@ -21,12 +21,12 @@ public class TempLateNeoForge {
                 //? if <1.21 {
                 ConfigScreenHandler.ConfigScreenFactory.class,
                 () -> new ConfigScreenHandler.ConfigScreenFactory(
-                        ((client, parent) -> ConfigScreen.createCursorEditScreen(parent))
+                        ((client, parent) -> ConfigScreen.createConfigScreen(parent))
                 )
                 //?} else {
-                /*IConfigScreenFactory.class,
-                () -> (client, parent) -> CursorEditScreen.createCursorEditScreen(parent)
-                *///?}
+                /^IConfigScreenFactory.class,
+                () -> (client, parent) -> ConfigScreen.createConfigScreen(parent)
+                ^///?}
         );
 	}
     public static class NeoForgePlatform implements ModPlatform {
@@ -41,4 +41,4 @@ public class TempLateNeoForge {
         }
     }
 }
-//?}
+*///?}

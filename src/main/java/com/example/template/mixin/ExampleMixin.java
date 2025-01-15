@@ -12,7 +12,7 @@ public class ExampleMixin {
 
     @Inject(method = "init",at=@At("HEAD"))
     void init(CallbackInfo ci){
-        TempLateInit.LOGGER.info("Stonecutter example mixin init");
+        TempLateInit.LOGGER.info("Stonecutter example mixin init in %s".formatted(TempLateInit.PLATFORM.getModloader()));
     }
 
 }

@@ -14,10 +14,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.platforms.fabric.TempLateFabric"
+      "com.example.template.platforms.fabric.TempLateFabric"
     ],
     "modmenu": [
-      "com.example.platforms.fabric.ModMenuIntegration"
+      "com.example.template.platforms.fabric.ModMenuIntegration"
     ]
   },
   "mixins": [

@@ -1,5 +1,5 @@
 //? if forge {
-/*package com.example.platforms.forge;
+/*package com.example.template.platforms.forge;
 
 import com.example.template.ConfigScreen;
 import com.example.template.TempLateInit;
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TempLateForge {
 	public TempLateForge() {
 		TempLateInit.entrypoint(new ForgePlatform());
-        MinecraftForge.registerConfigScreen(ConfigScreen::createCursorEditScreen);
+        MinecraftForge.registerConfigScreen(ConfigScreen::createConfigScreen);
 	}
 	public static class ForgePlatform implements ModPlatform {
 		@Override

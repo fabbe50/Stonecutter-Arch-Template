@@ -1,5 +1,6 @@
 package com.example.template;
 
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
@@ -10,17 +11,16 @@ public class ConfigScreen extends Screen {
     }
 
     @Override
-    protected void init() {
-       addDrawableChild(((context, mouseX, mouseY, delta) -> {
-           context.drawCenteredTextWithShadow(client.textRenderer,
-                   "Hello, world",
-                   width / 2,
-                   height / 2,
-                   0xFFFFFFFF);
-       }));
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        super.render(context, mouseX, mouseY, delta);
+        context.drawCenteredTextWithShadow(client.textRenderer,
+                "Hello, world",
+                width / 2,
+                height / 2,
+                0xFFFFFFFF);
     }
 
-    public static ConfigScreen createCursorEditScreen(Screen parent) {
+    public static ConfigScreen createConfigScreen(Screen parent) {
         return new ConfigScreen(parent);
     }
 }

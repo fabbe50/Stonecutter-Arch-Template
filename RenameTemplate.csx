@@ -1,15 +1,15 @@
 
 public static List<string> FindAllFiles(string directoryPath)
 {
-    return Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories).ToList();
+    return Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories)
+        .Select(file => Path.GetRelativePath(directoryPath, file))
+        .ToList();
 }
 
 var replacements = new[]
 {
-    new { Old = "com.example", New = "io.github.cooldev" },
-    new { Old = "template", New = "coolmod" },
-    new { Old = "Template", New = "Cool Mod" },
-    new { Old = "TempLate", New = "CoolMod" }
+//ORDER MATTERS
+    new { Old = "JavaJumper", New = "CoolDev" } //change mod init class and other places where mod name is in PascalCase
 };
 
 var files = FindAllFiles(Directory.GetCurrentDirectory());
