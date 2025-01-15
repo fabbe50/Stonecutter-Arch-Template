@@ -22,7 +22,7 @@ foreach(var file in files)
 {
     if (file.StartsWith("."))
         continue;
-    if (file.EndsWith(".csx"))
+    if (file.Contains(".cs"))
         continue;
     if (file.Contains(".git"))
         continue;
