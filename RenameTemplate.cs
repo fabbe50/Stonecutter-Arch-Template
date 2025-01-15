@@ -22,6 +22,7 @@ foreach (var file in files)
 {
     var oldFile = file.Replace("\\", "/");
     var newFile = oldFile;
+    Console.WriteLine("checking: " + oldFile);
 
     if (oldFile.StartsWith("."))
         continue;
@@ -29,7 +30,7 @@ foreach (var file in files)
         continue;
     if (oldFile.Contains(".git"))
         continue;
-    if (oldFile.Contains(".gradle"))
+    if (oldFile.Contains(".gradle/"))
         continue;
     if (oldFile.Contains("build/"))
         continue;
@@ -46,9 +47,6 @@ foreach (var file in files)
     {
         fileContent = fileContent.Replace(replacement.Old, replacement.New);
         newFile = newFile.Replace(replacement.Old.Replace(".", "/"), replacement.New.Replace(".", "/"));
-
-        Console.WriteLine(replacement.Old.Replace(".", "/") + " -> " + replacement.New.Replace(".", "/"));
-
     }
     Console.WriteLine($"Moving \n\t< {oldFile} \n\t> {newFile}");
     File.Delete(oldFile);
