@@ -1,5 +1,4 @@
-﻿
-public static List<string> FindAllFiles(string directoryPath)
+﻿List<string> FindAllFiles(string directoryPath)
 {
     return Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories)
         .Select(file => Path.GetRelativePath(directoryPath, file))
@@ -13,7 +12,7 @@ var replacements = new[]
     new { Old = "template", New = "coolmod" }, //change modid
     new { Old = "Template", New = "Cool Mod" }, //change mod display name
     //               ↕ <- Letter L is different case here
-    new { Old = "TempLate", New = "CoolMod" } //change mod init class and other places where mod name is in PascalCase
+    new { Old = "TempLate", New = "CoolMod" }, //change mod init class and other places where mod name is in PascalCase
     new { Old = "AuthorExample", New = "CoolDev" }     
 };
 
