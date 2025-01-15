@@ -1,4 +1,4 @@
-package io.github.jumperonjava.template;
+package com.example.template;
 
 public interface ModPlatform {
     String getModloader();

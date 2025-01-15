@@ -1,4 +1,4 @@
-package io.github.jumperonjava.template;
+package com.example.template;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

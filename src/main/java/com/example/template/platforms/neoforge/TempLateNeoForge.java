@@ -1,9 +1,9 @@
 //? if neoforge {
-package io.github.jumperonjava.customcursor.platforms.neoforge;
+package com.example.template.platforms.neoforge;
 
-import io.github.jumperonjava.customcursor.ConfigScreen;
-import io.github.jumperonjava.customcursor.CustomCursorInit;
-import io.github.jumperonjava.customcursor.ModPlatform;
+import com.example.template.ConfigScreen;
+import com.example.template.TempLateInit;
+import com.example.template.ModPlatform;
 import net.minecraft.client.gui.screen.Screen;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModLoadingContext;
@@ -13,10 +13,10 @@ import net.neoforged.neoforge.client.ConfigScreenHandler;
 //?} else {
 /*import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 *///?}
-@Mod("customcursor")
-public class CustomCursorNeoForge {
-	public CustomCursorNeoForge() {
-		CustomCursorInit.entrypoint(new NeoForgePlatform());
+@Mod("template")
+public class TempLateNeoForge {
+	public TempLateNeoForge() {
+		TempLateInit.entrypoint(new NeoForgePlatform());
         ModLoadingContext.get().registerExtensionPoint(
                 //? if <1.21 {
                 ConfigScreenHandler.ConfigScreenFactory.class,

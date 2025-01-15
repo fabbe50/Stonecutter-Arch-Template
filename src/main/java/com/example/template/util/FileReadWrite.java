@@ -1,4 +1,4 @@
-package io.github.jumperonjava.customcursor.util;
+package com.example.template.util;
 
 import java.io.File;
 import java.io.FileOutputStream;

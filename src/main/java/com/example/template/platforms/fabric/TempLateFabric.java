@@ -1,15 +1,15 @@
 //? if fabric {
-/*package io.github.jumperonjava.customcursor.platforms.fabric;
+/*package com.example.platforms.fabric;
 
-import io.github.jumperonjava.customcursor.ModPlatform;
+import com.example.template.ModPlatform;
 import net.fabricmc.api.ModInitializer;
-import io.github.jumperonjava.customcursor.CustomCursorInit;
+import com.example.template.TempLateInit;
 import net.fabricmc.loader.api.FabricLoader;
 
-public class CustomCursorFabric implements ModInitializer {
+public class TempLateFabric implements ModInitializer {
 	@Override
 	public void onInitialize() {
-		CustomCursorInit.entrypoint(new FabricPlatform());
+		TempLateInit.entrypoint(new FabricPlatform());
 	}
 	public static class FabricPlatform implements ModPlatform{
 

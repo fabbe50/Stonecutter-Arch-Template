@@ -6,10 +6,10 @@ public static List<string> FindAllFiles(string directoryPath)
 
 var replacements = new[]
 {
-    new { Old = "customcursor", New = "template" },
-    new { Old = "Custom Cursor", New = "Template" },
-    new { Old = "CustomCursor", New = "TempLate" },
-    new { Old = "io.github.jumperonjava.customcursor", New = "io.github.example" }
+    new { Old = "com.example", New = "io.github.cooldev" },
+    new { Old = "template", New = "coolmod" },
+    new { Old = "Template", New = "Cool Mod" },
+    new { Old = "TempLate", New = "CoolMod" }
 };
 
 var files = FindAllFiles(Directory.GetCurrentDirectory());
@@ -22,14 +22,25 @@ foreach(var file in files)
         continue;
     if (file.Contains(".git"))
         continue;
+    if (file.Contains(".gradle"))
+        continue;
+    if (file.Contains("build"))
+        continue;
+
 
     var fileContent = File.ReadAllText(file);
-    var newFile = file;
+    var oldFile = file.Replace("\\","/");
+    var newFile = oldFile;
     foreach (var replacement in replacements)
     {
         fileContent = fileContent.Replace(replacement.Old, replacement.New);
         newFile = newFile.Replace(replacement.Old.Replace(".","/"), replacement.New.Replace(".","/"));
+
+        Console.WriteLine(replacement.Old.Replace(".","/")+" -> "+replacement.New.Replace(".","/"));
+        
     }
-    File.Delete(file);
+    Console.WriteLine($"Moving \n\t< {oldFile} \n\t> {newFile}");
+    File.Delete(oldFile);
+    Directory.CreateDirectory(Path.GetDirectoryName(newFile));
     File.WriteAllText(newFile,fileContent);
 }

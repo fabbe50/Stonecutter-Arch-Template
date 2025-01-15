@@ -1,6 +1,6 @@
-package io.github.jumperonjava.template.mixin;
+package com.example.template.mixin;
 
-import io.github.jumperonjava.template.TempLateInit;
+import com.example.template.TempLateInit;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

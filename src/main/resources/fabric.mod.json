@@ -14,15 +14,15 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.jumperonjava.customcursor.platforms.fabric.CustomCursorFabric"
+      "com.example.platforms.fabric.TempLateFabric"
     ],
     "modmenu": [
-      "io.github.jumperonjava.customcursor.platforms.fabric.ModMenuIntegration"
+      "com.example.platforms.fabric.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "customcursor-common.mixins.json",
-    "customcursor-fabric.mixins.json"
+    "template-common.mixins.json",
+    "template-fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15",

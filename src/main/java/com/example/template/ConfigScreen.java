@@ -1,4 +1,4 @@
-package io.github.jumperonjava.template;
+package com.example.template;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;

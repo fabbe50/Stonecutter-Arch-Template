@@ -1,9 +1,9 @@
 //? if fabric {
-/*package io.github.jumperonjava.customcursor.platforms.fabric;
+/*package com.example.platforms.fabric;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import io.github.jumperonjava.customcursor.ConfigScreen;
+import com.example.template.ConfigScreen;
 
 public class ModMenuIntegration implements ModMenuApi {
     public ConfigScreenFactory<?> getModConfigScreenFactory() {

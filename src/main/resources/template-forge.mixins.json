@@ -1,9 +1,8 @@
 {
   "required": true,
-  "package": "io.github.jumperonjava.customcursor.mixin",
+  "package": "com.example.platforms.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

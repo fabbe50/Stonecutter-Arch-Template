@@ -1,17 +1,17 @@
 //? if forge {
-/*package io.github.jumperonjava.customcursor.platforms.forge;
+/*package com.example.platforms.forge;
 
-import io.github.jumperonjava.customcursor.ConfigScreen;
-import io.github.jumperonjava.customcursor.CustomCursorInit;
-import io.github.jumperonjava.customcursor.ModPlatform;
+import com.example.template.ConfigScreen;
+import com.example.template.TempLateInit;
+import com.example.template.ModPlatform;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod("customcursor")
-public class CustomCursorForge {
-	public CustomCursorForge() {
-		CustomCursorInit.entrypoint(new ForgePlatform());
+@Mod("template")
+public class TempLateForge {
+	public TempLateForge() {
+		TempLateInit.entrypoint(new ForgePlatform());
         MinecraftForge.registerConfigScreen(ConfigScreen::createCursorEditScreen);
 	}
 	public static class ForgePlatform implements ModPlatform {

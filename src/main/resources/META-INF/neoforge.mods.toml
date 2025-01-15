@@ -1,19 +1,19 @@
 modLoader = "javafml"
 loaderVersion = "*"
 license = "LGPLv3"
-issueTrackerURL="https://JavaJumper/CustomCursor/issues"
+issueTrackerURL="https://JavaJumper/TempLate/issues"
 
 [[mods]]
-modId = "customcursor"
+modId = "template"
 version = "${version}"
 displayName = "${name}"
 authors = "JavaJumper"
 description = ""
-logoFile = "assets/customcursor/icon.png"
+logoFile = "assets/template/icon.png"
 logoBlur = false
 
 [[mixins]]
-config = "customcursor-common.mixins.json"
+config = "template-common.mixins.json"
 
 [[mixins]]
-config = "customcursor-neoforge.mixins.json"
+config = "template-neoforge.mixins.json"
