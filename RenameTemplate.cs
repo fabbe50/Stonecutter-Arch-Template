@@ -1,4 +1,4 @@
-
+﻿
 public static List<string> FindAllFiles(string directoryPath)
 {
     return Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories)
