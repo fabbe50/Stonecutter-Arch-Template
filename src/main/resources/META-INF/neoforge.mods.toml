@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "*"
 license = "LGPLv3"
-issueTrackerURL="https://JavaJumper/TempLate/issues"
+issueTrackerURL="https://AuthorExample/TempLate/issues"
 
 [[mods]]
 modId = "template"
 version = "${version}"
 displayName = "${name}"
-authors = "JavaJumper"
+authors = "AuthorExample"
 description = ""
 logoFile = "assets/template/icon.png"
 logoBlur = false

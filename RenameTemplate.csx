@@ -8,8 +8,13 @@ public static List<string> FindAllFiles(string directoryPath)
 
 var replacements = new[]
 {
-//ORDER MATTERS
-    new { Old = "JavaJumper", New = "CoolDev" } //change mod init class and other places where mod name is in PascalCase
+    //ORDER MATTERS
+    new { Old = "com.example.template", New = "io.github.cooldev.coolmod" }, //change mod package
+    new { Old = "template", New = "coolmod" }, //change modid
+    new { Old = "Template", New = "Cool Mod" }, //change mod display name
+    //               ↕ <- Letter L is different case here
+    new { Old = "TempLate", New = "CoolMod" } //change mod init class and other places where mod name is in PascalCase
+    new { Old = "AuthorExample", New = "CoolDev" }     
 };
 
 var files = FindAllFiles(Directory.GetCurrentDirectory());
@@ -41,6 +46,8 @@ foreach(var file in files)
     }
     Console.WriteLine($"Moving \n\t< {oldFile} \n\t> {newFile}");
     File.Delete(oldFile);
-    Directory.CreateDirectory(Path.GetDirectoryName(newFile));
+    try{
+        Directory.CreateDirectory(Path.GetDirectoryName(newFile));
+    }catch{};
     File.WriteAllText(newFile,fileContent);
 }
