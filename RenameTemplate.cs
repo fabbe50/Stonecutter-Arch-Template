@@ -30,7 +30,8 @@ foreach(var file in files)
         continue;
     if (file.Contains("build"))
         continue;
-
+    if (file.Contains("LICENSE"))
+        continue;
 
     var fileContent = File.ReadAllText(file);
     var oldFile = file.Replace("\\","/");
