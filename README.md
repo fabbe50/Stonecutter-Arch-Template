@@ -21,4 +21,8 @@ but you can easily add other versions if you need that
 - 1.21.3, fabric, neoforge
 - 1.21.4, fabric, neoforge
 
-Also template had publishing set up, you need to specify project id for modrinth and curseforge in gradle.properties, and tokens for these sites in local.properties (it is gitignored, check local.properties.example) 
+To start current active version use runActive task
+
+For testing all versions you can use chiseledRunAllClients, it runs all possible version and loader variants (in random(?) order)
+
+Also template had publishing set up, you need to specify project id for modrinth and curseforge in gradle.properties, and tokens for these sites in local.properties (it is gitignored, check local.properties.example). After that use chiseledPublishMods task
