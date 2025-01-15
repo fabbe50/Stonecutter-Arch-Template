@@ -28,7 +28,7 @@ foreach (var file in files)
         continue;
     if (file.Contains(".gradle"))
         continue;
-    if (file.Contains("build"))
+    if (file.Contains("build/"))
         continue;
     if (file.Contains("LICENSE"))
         continue;
