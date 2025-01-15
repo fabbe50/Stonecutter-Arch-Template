@@ -20,27 +20,27 @@ var files = FindAllFiles(Directory.GetCurrentDirectory());
 
 foreach (var file in files)
 {
-    if (file.StartsWith("."))
-        continue;
-    if (file.Contains(".cs"))
-        continue;
-    if (file.Contains(".git"))
-        continue;
-    if (file.Contains(".gradle"))
-        continue;
-    if (file.Contains("build/"))
-        continue;
-    if (file.Contains("LICENSE"))
-        continue;
-    if (file.Contains("bin"))
-        continue;
-    if (file.Contains("obj"))
-        continue;
-
-
-    var fileContent = File.ReadAllText(file);
     var oldFile = file.Replace("\\", "/");
     var newFile = oldFile;
+
+    if (oldFile.StartsWith("."))
+        continue;
+    if (oldFile.Contains(".cs"))
+        continue;
+    if (oldFile.Contains(".git"))
+        continue;
+    if (oldFile.Contains(".gradle"))
+        continue;
+    if (oldFile.Contains("build/"))
+        continue;
+    if (oldFile.Contains("LICENSE"))
+        continue;
+    if (oldFile.Contains("bin"))
+        continue;
+    if (oldFile.Contains("obj"))
+        continue;
+
+    var fileContent = File.ReadAllText(oldFile);
 
     foreach (var replacement in replacements)
     {
