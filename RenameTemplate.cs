@@ -8,7 +8,7 @@
 var replacements = new[]
 {
     //ORDER MATTERS
-    new { Old = "com.example.template", New = "io.github.cooldev.coolmod" }, //change mod package
+    new { Old = "com.example", New = "io.github.cooldev" }, //change mod package
     new { Old = "template", New = "coolmod" }, //change modid
     new { Old = "Template", New = "Cool Mod" }, //change mod display name
     //               ↕ <- Letter L is different case here

@@ -20,7 +20,7 @@ architectury.common(stonecutter.tree.branches.mapNotNull {
     if (stonecutter.current.project !in it) null
     else it.prop("loom.platform")
 })
-repositories{
+repositories {
     maven("https://maven.neoforged.net/releases/")
 
     //modmenu
@@ -70,7 +70,7 @@ loom {
             options.put("mark-corresponding-synthetics", "1")
         }
     }
-    if(loader == "forge") {
+    if (loader == "forge") {
         forge.mixinConfigs(
             "template-common.mixins.json",
             "template-forge.mixins.json",
@@ -92,8 +92,7 @@ publishMods {
     file = project.tasks.remapJar.get().archiveFile
     dryRun = modrinthToken == null || curseforgeToken == null
 
-    displayName =
-        "${mod.name} ${loader.replaceFirstChar { it.uppercase() }} ${property("mod.mc_title")}-${mod.version}"
+    displayName = "${mod.name} ${loader.replaceFirstChar { it.uppercase() }} ${property("mod.mc_title")}-${mod.version}"
     version = mod.version
     changelog = rootProject.file("CHANGELOG.md").readText()
     type = BETA
@@ -124,8 +123,7 @@ publishMods {
 
 java {
     withSourcesJar()
-    val java = if (stonecutter.eval(minecraft, ">=1.20.5"))
-        JavaVersion.VERSION_21 else JavaVersion.VERSION_17
+    val java = if (stonecutter.eval(minecraft, ">=1.20.5")) JavaVersion.VERSION_21 else JavaVersion.VERSION_17
     targetCompatibility = java
     sourceCompatibility = java
 }
@@ -151,20 +149,43 @@ tasks.jar {
     archiveClassifier = "dev"
 }
 
+val buildAndCollect = tasks.register<Copy>("buildAndCollect") {
+    group = "versioned"
+    description = "Must run through 'chiseledBuild'"
+    from(tasks.remapJar.get().archiveFile, tasks.remapSourcesJar.get().archiveFile)
+    into(rootProject.layout.buildDirectory.file("libs/${mod.version}/$loader"))
+    dependsOn("build")
+}
+
+if (stonecutter.current.isActive) {
+    rootProject.tasks.register("buildActive") {
+        group = "project"
+        dependsOn(buildAndCollect)
+    }
+
+    rootProject.tasks.register("runActive") {
+        group = "project"
+        dependsOn(tasks.named("runClient"))
+    }
+}
+
 tasks.processResources {
-    properties(listOf("fabric.mod.json"),
+    properties(
+        listOf("fabric.mod.json"),
         "id" to mod.id,
         "name" to mod.name,
         "version" to mod.version,
         "minecraft" to mod.prop("mc_dep_fabric")
     )
-    properties(listOf("META-INF/mods.toml", "pack.mcmeta"),
+    properties(
+        listOf("META-INF/mods.toml", "pack.mcmeta"),
         "id" to mod.id,
         "name" to mod.name,
         "version" to mod.version,
         "minecraft" to mod.prop("mc_dep_forgelike")
     )
-    properties(listOf("META-INF/neoforge.mods.toml", "pack.mcmeta"),
+    properties(
+        listOf("META-INF/neoforge.mods.toml", "pack.mcmeta"),
         "id" to mod.id,
         "name" to mod.name,
         "version" to mod.version,
@@ -175,12 +196,4 @@ tasks.processResources {
 tasks.build {
     group = "versioned"
     description = "Must run through 'chiseledBuild'"
-}
-
-tasks.register<Copy>("buildAndCollect") {
-    group = "versioned"
-    description = "Must run through 'chiseledBuild'"
-    from(tasks.remapJar.get().archiveFile, tasks.remapSourcesJar.get().archiveFile)
-    into(rootProject.layout.buildDirectory.file("libs/${mod.version}/$loader"))
-    dependsOn("build")
 }
