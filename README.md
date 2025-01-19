@@ -2,7 +2,7 @@
 
 If you have some issues with template ping me (@JavaJumper) in [Kiku's realm](https://discord.gg/TBgNUCfryS) or official fabric discord
 
-This template allows you create multiloader multitemplate mod using stonecutter and architectury 
+This template allows you create multiloader multversion mod using stonecutter and architectury 
 
 It is based on my CustomCursor project
 
