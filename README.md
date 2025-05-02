@@ -16,6 +16,7 @@ but you can easily add other versions if you need that
 - 1.21.1, fabric, neoforge
 - 1.21.3, fabric, neoforge
 - 1.21.4, fabric, neoforge
+- 1.21.5, fabric, neoforge
 
 You can use c# script to automatically change all template names.
 Open RenameTemplate.cs, change names in replacements array and run "dotnet run" in this directory
