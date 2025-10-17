@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 public class TempLateForge {
 	public TempLateForge() {
 		TempLateInit.entrypoint(new ForgePlatform());
-        MinecraftForge.registerConfigScreen(ConfigScreen::createConfigScreen);
+        MinecraftForge.registerConfigScreen(ConfigScreen::getConfigScreen);
 	}
 	public static class ForgePlatform implements ModPlatform {
 		@Override

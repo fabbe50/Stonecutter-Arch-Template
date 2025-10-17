@@ -5,7 +5,8 @@ import org.slf4j.LoggerFactory;
 
 public class TempLateInit
 {
-	public static final String MODID = "template";
+	public static final String MOD_ID = "template";
+	public static final String MOD_NAME = "Template";
 	public static final Logger LOGGER = LoggerFactory.getLogger("Template");
 	public static ModPlatform PLATFORM = null;
 

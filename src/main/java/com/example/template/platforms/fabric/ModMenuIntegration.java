@@ -7,7 +7,7 @@ import com.example.template.ConfigScreen;
 
 public class ModMenuIntegration implements ModMenuApi {
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return ConfigScreen::createConfigScreen;
+        return ConfigScreen::getConfigScreen;
     }
 }
 //?}
