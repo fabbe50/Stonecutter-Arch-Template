@@ -80,7 +80,7 @@ public class LangUtils {
 
     public static Component getComponent(Block block) {
         if (Minecraft.getInstance().options.advancedItemTooltips) {
-            return Component.literal(String.valueOf(block.arch$registryName()));
+            return Component.literal(block.getDescriptionId());
         } else {
             return Component.translatable(getBlockKey(block));
         }

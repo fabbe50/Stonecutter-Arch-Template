@@ -47,7 +47,7 @@ dependencies {
         "forge"("net.minecraftforge:forge:${minecraft}-${mod.dep("forge_loader")}")
         mappings(loom.officialMojangMappings())
 
-        modImplementation "me.shedaniel.cloth:cloth-config-forge:${mod.dep("cloth_config_version")}"
+        modImplementation("me.shedaniel.cloth:cloth-config-forge:${mod.dep("cloth_config_version")}")
 
         "io.github.llamalad7:mixinextras-forge:${mod.dep("mixin_extras")}".let {
             implementation(it)
@@ -58,7 +58,7 @@ dependencies {
         "neoForge"("net.neoforged:neoforge:${mod.dep("neoforge_loader")}")
         mappings(loom.officialMojangMappings())
 
-        modImplementation "me.shedaniel.cloth:cloth-config-neoforge:${mod.dep("cloth_config_version")}"
+        modImplementation("me.shedaniel.cloth:cloth-config-neoforge:${mod.dep("cloth_config_version")}")
     }
 }
 

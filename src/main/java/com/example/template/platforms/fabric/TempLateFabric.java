@@ -22,6 +22,11 @@ public class TempLateFabric implements ModInitializer {
 		public boolean isModLoaded(String modloader) {
 			return FabricLoader.getInstance().isModLoaded(modloader);
 		}
+		
+		@Override
+        public String getConfigPath() {
+            return FabricLoader.getInstance().getConfigDir().toString();
+        }
 	}
 }
 //?}

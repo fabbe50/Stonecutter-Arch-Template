@@ -7,6 +7,7 @@ import com.example.template.ModPlatform;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 @Mod("template")
 public class TempLateForge {
@@ -24,6 +25,11 @@ public class TempLateForge {
 		public boolean isModLoaded(String modId) {
 			return ModList.get().isLoaded(modId);
 		}
+		
+		@Override
+        public String getConfigPath() {
+            return FMLPaths.CONFIGDIR.get().toString();
+        }
 	}
 
 }
